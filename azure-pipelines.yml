@@ -1,5 +1,5 @@
 pool:
-  name: linux
+  name: linux1
   demands: java
 
 variables:
