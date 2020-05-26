@@ -1,1 +1,20 @@
+pool:
+  name: linux
+  demands: java
 
+variables:
+  - group: 'Maven and Gradle'
+  - name: dockerRepo
+    value: 'oneview-docker-dev-local.artifactory.rogers.com'
+  - name: dockerImageName
+    value: 'mainrepo'
+  - name: Major
+    value: '1'
+  - name: Minor
+    value: '0'
+  - name: Build.BuildNumber
+    value: $(Major).$(Minor).$(Build.BuildId)
+  - name: SONAR_SCANNER_OPTS
+    value: ""
+
+name: $(Major).$(Minor).$(Build.BuildId)
